@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+<Button
+    android:id="@+id/id_btn_server"
+    android:layout_width="120dp"
+    android:layout_height="80dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="134dp"
+    android:text="@string/id_btn_server" />
+
+<Button
+    android:id="@+id/id_btn_client"
+    android:layout_width="120dp"
+    android:layout_height="80dp"
+    android:layout_above="@+id/id_btn_server"
+    android:layout_alignLeft="@+id/id_btn_server"
+    android:layout_marginBottom="48dp"
+    android:text="@string/id_btn_client" />
+
+<TextView
+    android:layout_width="140dp"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/id_btn_client"
+    android:layout_alignLeft="@+id/id_btn_client"
+    android:layout_marginBottom="51dp"
+    android:layout_marginLeft="19dp"
+    android:text="@string/menu"
+    android:textSize="20sp" />
+
+</RelativeLayout>

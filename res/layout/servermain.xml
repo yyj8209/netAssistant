@@ -1,0 +1,114 @@
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.assitant.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:id="@+id/id_mainbody"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical" >
+
+              
+                <!-- 1.启动服务器功能. -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/id_btn_setServer"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="启动服务器功能" />
+
+                 <!-- 2.信息显示区域：包括服务器的本地ip地址和端口号 -->                   
+                </LinearLayout>
+
+                   <ScrollView
+                    android:id="@+id/ScrollView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical" >
+           
+
+                        <EditText
+                            android:id="@+id/id_edt_jieshou2"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:scrollbars="vertical"
+                            android:lines="8"
+                            android:gravity="top"
+                            android:hint="消息显示区" />
+                    </LinearLayout> 
+                    </ScrollView>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/id_edt_sendArea2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4.0"
+                        android:focusable="true"
+                        android:gravity="top"
+                        android:hint="发送区"
+                        android:minLines="3" >
+
+                        <requestFocus />
+                    </EditText>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical" >
+
+                        <Button
+                            android:id="@+id/id_btn_send2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:text="发送" />
+                         
+                         <Button
+                            android:id="@+id/id_btn_clean2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:text="清除" />
+
+                    
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>
