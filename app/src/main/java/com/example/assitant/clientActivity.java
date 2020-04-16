@@ -204,7 +204,7 @@ public class clientActivity extends Activity implements
 
 		
 		try {
-			String context = edtSend.getText().toString();
+			final String context = edtSend.getText().toString();
 
 			if (printWriter == null || context == null) {
 
@@ -218,9 +218,15 @@ public class clientActivity extends Activity implements
 				}
 			}
 
-			printWriter.print(context);
-			printWriter.flush();  
-			Log.i(tag, "--->> client send data!");
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+
+					printWriter.print(context);
+					printWriter.flush();
+					Log.i(tag, "--->> client send data!");
+				}
+			}).start();
 		} catch (Exception e) {
 			Log.e(tag, "--->> send failure!" + e.toString());
 

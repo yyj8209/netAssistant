@@ -88,23 +88,27 @@ private OnClickListener btnsendlistener= new OnClickListener(){
 			// TODO Auto-generated method stub				
 			if ( serverRuning && mSocketServer!=null ) 
 			{
-				String msgText =edtSend.getText().toString();//取得编辑框中我们输入的内容
+				final String msgText =edtSend.getText().toString();//取得编辑框中我们输入的内容
 				if(msgText.length()<=0)
 				{
 					Toast.makeText(mContext, "发送内容不能为空！", Toast.LENGTH_SHORT).show();
 				}
 				else
 				{
-					try 
-					{				    	
-				    	mPrintWriterServer.print(msgText);//发送给服务器
-				    	mPrintWriterServer.flush();
-					}
-					catch (Exception e) 
-					{
-						// TODO: handle exception
-						Toast.makeText(mContext, "发送异常：" + e.getMessage(), Toast.LENGTH_SHORT).show();
-					}
+					new Thread(new Runnable() {
+						@Override
+						public void run() {
+							try {
+								mPrintWriterServer.print(msgText);//发送给服务器
+								Log.e("out", "打印信息" + msgText);
+								mPrintWriterServer.flush();
+								Log.e("out", "输出信息" + msgText);
+							} catch (Exception e) {
+								// TODO: handle exception
+								Toast.makeText(mContext, "发送异常：" + e.getMessage(), Toast.LENGTH_SHORT).show();
+							}
+						}
+					}).start();
 				}
 			}
 			else
@@ -176,12 +180,12 @@ private Runnable mcreateRunnable= new Runnable()
 			public void run()
 			{				
 				try {
-					serverSocket = new ServerSocket(0);
+					serverSocket = new ServerSocket(8000);
 					
 					SocketAddress address = null;	
 					if(!serverSocket.isBound())	
 					{
-						serverSocket.bind(address, 0);
+						serverSocket.bind(address, 8000);
 					}
 					
 					

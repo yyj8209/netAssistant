@@ -4,5 +4,8 @@
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
-/myproject/build
+/app/build
 /captures
+/build
+/gen
+

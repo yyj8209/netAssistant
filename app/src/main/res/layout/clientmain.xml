@@ -64,7 +64,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:inputType="number"
-                        android:hint="8080" />
+                        android:hint="@string/port" />
                 </LinearLayout>
                 <!-- 3.连接、关闭按钮和其指示灯. -->
 
@@ -104,8 +104,8 @@
                             android:lines="8"
                             android:gravity="top"
                             android:hint="接收显示区" />
-                    </LinearLayout> 
-                    </ScrollView>
+                    </LinearLayout>
+                   </ScrollView>
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"

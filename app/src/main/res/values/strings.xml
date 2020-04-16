@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">网络调试助手</string>
+    <string name="app_name">TCP调试</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="menu">协议类型</string>
     <string name="id_btn_client">TCP Client</string>
     <string name="id_btn_server">TCP Server</string>
     <string name="ip_add">服务器IP地址:</string>
-    <string name="ip">192.168.0.104</string>
+    <string name="ip">192.168.4.1</string>
     <string name="server_port">服务器端口号:</string>
+    <string name="port">服务器端口号:</string>
 </resources>
